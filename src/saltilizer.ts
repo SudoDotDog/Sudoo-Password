@@ -67,13 +67,13 @@ export class Saltilizer {
 
     public combine(content: string): string {
 
-        const startContent: string = this.getStartContent();
-        const endContent: string = this.getEndContent();
+        const startContent: string = this._getStartContent();
+        const endContent: string = this._getEndContent();
 
         return `${startContent}${content}${endContent}`;
     }
 
-    private getStartContent(): string {
+    private _getStartContent(): string {
 
         if (this._appendStart) {
             return this._salt;
@@ -81,7 +81,7 @@ export class Saltilizer {
         return '';
     }
 
-    private getEndContent(): string {
+    private _getEndContent(): string {
 
         if (this._appendEnd) {
             return this._salt;
