@@ -50,19 +50,19 @@ export class Saltilizer {
         return this;
     }
 
+    public verify(content: string, encrypted: string): boolean {
+
+        const correctEncrypted: string = this.encrypt(content);
+
+        return correctEncrypted === encrypted;
+    }
+
     public encrypt(content: string): string {
 
         const combined: string = this.combine(content);
         const encrypted: string = md5String(combined);
 
         return encrypted;
-    }
-
-    public verify(content: string, encrypted: string): boolean {
-
-        const correctEncrypted: string = this.encrypt(content);
-
-        return correctEncrypted === encrypted;
     }
 
     public combine(content: string): string {
