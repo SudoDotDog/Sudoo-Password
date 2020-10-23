@@ -26,7 +26,9 @@ import { Saltilizer } from "@sudoo/password";
 
 const saltilizer: Saltilizer = Saltilizer.create("<Salt>");
 const combined: string = saltilizer.combine("<Password>"); // Salted
-const combined: string = saltilizer.encrypt("<Password>"); // Salted and Hashed
+const hashed: string = saltilizer.encrypt("<Password>"); // Salted and Hashed
+
+const verifyResult: boolean = saltilizer.verify(hashed, "<Password>"); // true
 ```
 
 Saltilize password with start appending
@@ -38,7 +40,9 @@ import { Saltilizer } from "@sudoo/password";
 
 const saltilizer: Saltilizer = Saltilizer.createStartAppended("<Salt>");
 const combined: string = saltilizer.combine("<Password>"); // Salted
-const combined: string = saltilizer.encrypt("<Password>"); // Salted and Hashed
+const hashed: string = saltilizer.encrypt("<Password>"); // Salted and Hashed
+
+const verifyResult: boolean = saltilizer.verify(hashed, "<Password>"); // true
 ```
 
 Saltilize password with end appending
@@ -50,5 +54,7 @@ import { Saltilizer } from "@sudoo/password";
 
 const saltilizer: Saltilizer = Saltilizer.createEndAppended("<Salt>");
 const combined: string = saltilizer.combine("<Password>"); // Salted
-const combined: string = saltilizer.encrypt("<Password>"); // Salted and Hashed
+const hashed: string = saltilizer.encrypt("<Password>"); // Salted and Hashed
+
+const verifyResult: boolean = saltilizer.verify(hashed, "<Password>"); // true
 ```
