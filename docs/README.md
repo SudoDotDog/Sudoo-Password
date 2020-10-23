@@ -17,7 +17,35 @@ npm install @sudoo/password --save
 
 ## Usage
 
+Saltilize password with both start and end appending
+
+`Password` -> `SaltPasswordSalt`
+
 ```ts
 import { Saltilizer } from "@sudoo/password";
 
+const saltilizer: Saltilizer = Saltilizer.create("<Salt>");
+const combined: string = saltilizer.combine("<Password>");
+```
+
+Saltilize password with start appending
+
+`Password` -> `SaltPassword`
+
+```ts
+import { Saltilizer } from "@sudoo/password";
+
+const saltilizer: Saltilizer = Saltilizer.createStartAppended("<Salt>");
+const combined: string = saltilizer.combine("<Password>");
+```
+
+Saltilize password with end appending
+
+`Password` -> `PasswordSalt`
+
+```ts
+import { Saltilizer } from "@sudoo/password";
+
+const saltilizer: Saltilizer = Saltilizer.createEndAppended("<Salt>");
+const combined: string = saltilizer.combine("<Password>");
 ```

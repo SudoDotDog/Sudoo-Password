@@ -44,6 +44,17 @@ describe('Given {Saltilizer} class', (): void => {
         expect(combined).to.be.equal(`${salt}${value}`);
     });
 
+    it('should be able to combine static only start', (): void => {
+
+        const salt: string = chance.string();
+        const value: string = chance.string();
+
+        const saltilizer: Saltilizer = Saltilizer.createStartAppended(salt);
+        const combined: string = saltilizer.combine(value);
+
+        expect(combined).to.be.equal(`${salt}${value}`);
+    });
+
     it('should be able to combine only end', (): void => {
 
         const salt: string = chance.string();
@@ -51,6 +62,17 @@ describe('Given {Saltilizer} class', (): void => {
 
         const saltilizer: Saltilizer = Saltilizer.create(salt);
         saltilizer.disableAppendStart();
+        const combined: string = saltilizer.combine(value);
+
+        expect(combined).to.be.equal(`${value}${salt}`);
+    });
+
+    it('should be able to combine static only end', (): void => {
+
+        const salt: string = chance.string();
+        const value: string = chance.string();
+
+        const saltilizer: Saltilizer = Saltilizer.createEndAppended(salt);
         const combined: string = saltilizer.combine(value);
 
         expect(combined).to.be.equal(`${value}${salt}`);
