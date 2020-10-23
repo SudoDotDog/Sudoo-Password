@@ -18,7 +18,9 @@ export class Saltilizer {
     private _appendStart: boolean;
     private _appendEnd: boolean;
 
-    private constructor(salt: string) {
+    private constructor(
+        salt: string,
+    ) {
 
         this._salt = salt;
 

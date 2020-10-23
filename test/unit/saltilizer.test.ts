@@ -5,9 +5,9 @@
  * @package Unit Test
  */
 
-import { expect } from 'chai';
-import * as Chance from 'chance';
-import { Saltilizer } from '../../src';
+import { expect } from "chai";
+import * as Chance from "chance";
+import { Saltilizer } from "../../src";
 
 describe('Given {Saltilizer} class', (): void => {
 

@@ -14,3 +14,10 @@ yarn add @sudoo/password
 # Or
 npm install @sudoo/password --save
 ```
+
+## Usage
+
+```ts
+import { Saltilizer } from "@sudoo/password";
+
+```
