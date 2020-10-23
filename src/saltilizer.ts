@@ -10,7 +10,27 @@ export class Saltilizer {
 
     public static create(salt: string): Saltilizer {
 
-        return new Saltilizer(salt);
+        const saltilizer: Saltilizer = new Saltilizer(salt);
+        saltilizer.enableAppendStart();
+        saltilizer.enableAppendEnd();
+
+        return saltilizer;
+    }
+
+    public static createStartAppended(salt: string): Saltilizer {
+
+        const saltilizer: Saltilizer = new Saltilizer(salt);
+        saltilizer.enableAppendStart();
+
+        return saltilizer;
+    }
+
+    public static createEndAppended(salt: string): Saltilizer {
+
+        const saltilizer: Saltilizer = new Saltilizer(salt);
+        saltilizer.enableAppendEnd();
+
+        return saltilizer;
     }
 
     private readonly _salt: string;
@@ -18,14 +38,12 @@ export class Saltilizer {
     private _appendStart: boolean;
     private _appendEnd: boolean;
 
-    private constructor(
-        salt: string,
-    ) {
+    private constructor(salt: string) {
 
         this._salt = salt;
 
-        this._appendStart = true;
-        this._appendEnd = true;
+        this._appendStart = false;
+        this._appendEnd = false;
     }
 
     public enableAppendStart(): this {
