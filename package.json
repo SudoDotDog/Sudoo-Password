@@ -1,7 +1,7 @@
 {
 	"name": "@sudoo/password",
 	"version": "1.2.0",
-	"description": ":guardsman: Password utils",
+	"description": "Password utils",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/SudoDotDog/Sudoo-Password.git"
